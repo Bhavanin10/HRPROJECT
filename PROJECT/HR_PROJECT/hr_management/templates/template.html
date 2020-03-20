@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+    <h2><center>Employee Database Form</center></h2>
+    <h4><center>Personal Details</center></h4>
+    {% load crispy_forms_tags %}
+    <form class="" action="/TemplateView" method="post" enctype="multipart/form-data">
+    
+      {% csrf_token %}
+      <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+          {{ form.EmployeeId|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+          {{ form.EmployeeName|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4 mb-0">
+          {{ form.FathersName|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-4 mb-0">
+          {{ form.MothersName|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-4 mb-0">
+            {{ form.BloodGroup|as_crispy_field }}
+          </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 mb-0">
+          {{ form.DateOfBirth|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 mb-0">
+          {{ form.Gender|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 mb-0">
+            {{ form.MaritalStatus|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 mb-0">
+            {{ form.SpouseName|as_crispy_field }}
+        </div>
+      </div>
+    <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+            {{ form.Designation|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+            {{ form.EmergencyContact|as_crispy_field }}
+        </div>
+    </div>
+        {{form.PermanentAdress|as_crispy_field}}
+        {{form.PresentAdress|as_crispy_field}}
+    <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+            {{ form.EmailId|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+            {{ form.MobileNumber|as_crispy_field }}
+        </div>
+    </div>
+    <div>
+        <h4><center>Educational Details</center></h4>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4 mb-0">
+          {{ form.PostGraduation|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-4 mb-0">
+          {{ form.PostGraduation_university|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-4 mb-0">
+            {{ form.PostGraduation_Yop|as_crispy_field }}
+          </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4 mb-0">
+          {{ form.Graduation|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-4 mb-0">
+          {{ form.Graduation_university|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-4 mb-0">
+            {{ form.Graduation_Yop|as_crispy_field }}
+          </div>
+      </div>
+      <div>
+        <h4><center>Experience Details</center></h4>
+    </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 mb-0">
+          {{ form.Employer1|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 mb-0">
+          {{ form.Designation1|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 mb-0">
+            {{ form.From1|as_crispy_field }}
+          </div>
+        <div class="form-group col-md-3 mb-0">
+            {{ form.To1|as_crispy_field }}
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3 mb-0">
+          {{ form.Employer2|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 mb-0">
+          {{ form.Designation2|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 mb-0">
+            {{ form.From2|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-3 mb-0">
+            {{ form.To2|as_crispy_field }}
+        </div>
+      </div>
+      <div>
+        <h4><center>STATUTORY DETAILS-To be filled by the Employee</center></h4>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+            {{ form.DOJ|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+            {{ form.PANNumber|as_crispy_field }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+            {{ form.UANNumber|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+            {{ form.AdharNumber|as_crispy_field }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+            {{ form.BankAccountNumber|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+            {{ form.IFSCCode|as_crispy_field }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6 mb-0">
+            {{ form.EmployeeSignature|as_crispy_field }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+            {{ form.Date|as_crispy_field }}
+        </div>
+    </div>
+      <input type="submit" class="btn btn-primary" value="Submit">
+
+    </form>
+
+  </body>
+</html>
